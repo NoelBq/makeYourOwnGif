@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,500,700&display=swap" rel="stylesheet">
+    <title>Guifos Page</title>
+</head>
+<body class="day" onload="javascript:getMyGifs()">
+    <section class="welcome-top">
+        <span>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// <br class="text-break"> Número de visitas: 12.765.803</span>
+    </section>
+    <div class="wrapper misgifos">
+        <div>
+            <div class="navbar">
+                <div class="navbar-imglogo">
+                    <img src="./assets/gifOF_logo.png" id="logo" alt="gifos-logo">
+                </div>
+                <div class="navbar-buttons">
+                    <div class="btn-container">
+                        <div>
+                            <button class="btn-nav btn-create-gif" onclick="window.location.href='creargifos.html'">Crear Guifos</button>
+                        </div>
+                        <div  class="theme-container">
+                            <div class="btn-group" onclick="javascript:showHide()">
+                                <button class="btn-th">Elegir Tema</button>
+                                <button id="btdrop" class="btn-drop"></button>
+                            </div>
+                            <div id="drop-content">
+                                <div class="theme-display">
+                                    <button id="btn-day" class="theme-btn" onclick="changeTheme('day')">Sailor Day</button>
+                                    <button  id="btn-dark" class="theme-btn" onclick="changeTheme('night')">Sailor Night</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <button class="btn-my-gif" onclick="window.location.href='index.html'">Home</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="tendency-bar"><span>Mis Gifos</span></div>
+            <div class="my-gifos-grid">
+                
+            </div>
+        </section>
+    </div>
+</body>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</html> 

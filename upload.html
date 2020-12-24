@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" href="./styles/main.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,500,700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js"></script>
+    <title>Crear Gifos</title>
+</head>
+<body class="day" onload="javascript:getStreamAndRecord()">
+    <div class="welcome-top">
+        <span>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// <br class="text-break"> Número de visitas: 12.765.803</span>
+    </div>
+    <div class= "crear-gifos">
+        <nav class="gifos-nav">
+            <a href="creargifos.html">
+                <img class="arrow-gifos-nav" src="./assets/arrow.svg" alt="arrowimg" onclick="window.history.go(-1); return false;">
+            </a>
+            <img class="logo-gifos-nav" src="./assets/gifOF_logo.png" id="logo" alt="gifos-logo">
+        </nav>
+        <div class="crear-gifos-container">
+            <div id="preview-screen" class="crear-gifos-sqr">
+                <div class="crear-gifos-sqr-top" ><span class="top-text">Un Chequeo Antes de Empezar</span></div>
+                <div class="crear-gifos-content cp">
+                    <div class="img-captura-gif">
+                        <div class="gif-container">
+                            <video id="capture-video" src="#"></video>
+                        </div>
+                    </div>
+                    <!-- Capture Btn  -->
+                    <div class="btn-group-container-cp2"> 
+                        <div id="btn-captura" class="btn-group-cp2 btn-group-cp3 d-block" onclick="javascript:captureGif()">
+                            <button class="btn-camara"></button>
+                            <button class="btn-captura">Captura</button>
+                        </div>
+                    </div>
+                    <!--Boton de Listo y Timer-->
+                    <div class="d-none" id="btn-listo">
+                        <div class="bt-container-cp3">
+                            <div class="timer">
+                                <span id="timer1"></span>
+                            </div>
+                            <div class="btn-group-container-cp3">
+                                <div class="btn-group-cp3" onclick="javascript:stopCaptureGif()">
+                                    <button class="btn-recording"></button>
+                                    <button class="btn-captura-cp3">Listo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="upload-gif" class="d-none">
+                        <div  class="bt-container-cp4 ">
+                            <div class="tp-container">
+                                <div class="timer">
+                                    <span id="timer2"></span>
+                                </div>
+                                <div class="pb-container">
+                                    <div class="arrow"></div>
+                                    <progress value="1" max="100" class="cp-progress"></progress>
+                                </div>
+                            </div>
+                            <div class="btn-group-container-cp4">
+                                <div class="btn-group-cp4">
+                                    <button class="btn-cp4 btn-nav btn-rep" onclick="javascript:reCaptureGif()">Repetir Captura</button>
+                                    <button class="btn-cp4 btn-nav" onclick="javascript:uploadGifHandler()">Subir Gifo</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!--Loaded Screen-->
+            <div id="uploaded-screen" class="crear-gifos-content crear-gifos-sqr cp d-none">
+                <div class="crear-gifos-sqr-top">
+                    <span class="top-text">Guifo Subido Con Éxito</span>
+                </div>
+                <div class="img-captura-gif-cp6">
+                    <div class="container-gifo">
+                        <a href="" id="preview-container">
+                            <img src="#" id="preview-gifo" alt="previewgifo">
+                        </a>
+                    </div>
+                    <div class="container-options">
+                        <span>Guifo creado con éxito</span>
+                        <a href="#" id="copy-url">
+                            <div class="btn-nav bt bt-cp6">Copiar Enlace Guifo</div>
+                        </a>
+                        <div class="btn-nav bt bt-cp6" id="download-gif">Descargar Guifo</div>
+                    </div>
+                </div>
+                <div class="btn-group-container-cp2">
+                    <div class="btn-group-cp2">
+                         <button class="btn-nav btn-captura bt-ok" onclick="window.location.href='misgifos.html'">Listo</button>
+                    </div>
+                </div>
+            </div>
+            <div id="loader" class="crear-gifos-sqr loader d-none">
+                <div class="crear-gifos-sqr-top"><span>Subiendo gifo</span></div>
+                <div class="crear-gifos-content cp">
+                    <div class="img-captura-gif-cp5">
+                        <div class="gif-container-cp5">
+                            <img src="./assets/globe_img.png" alt="globeimg">
+                            <span class="textcp5">Estamos subiendo tu guifo…</span>
+                            <progress id="progressBar" class="progress-cp5 cp-progress" value="1" max="100"> 32% </progress>
+                            <span class="txtimecp5">Tiempo restante: 38 años algunos minutos</span>
+                        </div>
+                    </div>
+                    <div class="btn-group-container-cp2">
+                        <div class="btn-group-cp2">
+                            <button class="btn-nav btn-captura bt bt-light" onclick="cancelUpload(event)">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

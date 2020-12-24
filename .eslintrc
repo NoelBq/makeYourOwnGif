@@ -1,0 +1,17 @@
+{
+    "extends": "keystone",
+    "rules": {
+        "no-trailing-spaces": 0,
+        "no-mixed-spaces-and-tabs": 0,
+        "semi": 0,
+        "no-cond-assign": 0,
+        "no-undef": 0,
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "comma-dangle":"off",
+        "operator-linebreak": [1, "after"],
+        "quote-props": [1, "as-needed"],
+        "space-before-function-paren": "off",
+        "linebreak-style": "off"
+    }
+}
